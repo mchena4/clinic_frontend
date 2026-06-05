@@ -19,7 +19,7 @@ export default function LoginPage() {
 
     try {
       // Request to login api endpoint
-      const response = await api.post('/Auth/login', { email, password });
+      const response = await api.post('api/Auth/login', { email, password });
       
       //Save token
       const token = response.data.token;

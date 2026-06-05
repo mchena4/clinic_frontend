@@ -31,7 +31,7 @@ export default function RegisterPage() {
     setStatusMsg({ type: '', text: '' });
 
     try {
-      await api.post('/Auth/Register', {
+      await api.post('api/Auth/Register', {
         ...formData,
         dni: formData.dni, 
       });
