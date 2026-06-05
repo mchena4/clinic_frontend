@@ -133,7 +133,7 @@ export default function DashboardPage() {
     try {
       const formattedDate = `${appointmentDate}T${selectedTime}:00`;
       
-      await api.post('api/Appointments', {
+      await api.post('/api/Appointments', {
         doctorId: selectedDoctor.id,
         appointmentDate: formattedDate,
       });

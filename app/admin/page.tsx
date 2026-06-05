@@ -67,7 +67,7 @@ export default function AdminDashboardPage() {
     e.preventDefault();
     setIsSubmitting(true);
     try {
-      await api.post('api/Admin/RegisterDoctor', {
+      await api.post('/api/Admin/RegisterDoctor', {
         ...docForm,
         specialtyId: Number(docForm.specialtyId)
       });
@@ -85,7 +85,7 @@ export default function AdminDashboardPage() {
     e.preventDefault();
     setIsSubmitting(true);
     try {
-      await api.post('api/Admin/RegisterReceptionist', recForm);
+      await api.post('/api/Admin/RegisterReceptionist', recForm);
       showMessage('success', 'Recepcionista registrada exitosamente.');
       setRecForm({ email: '', password: '', firstName: '', lastName: '', phoneNumber: '' });
     } catch (err: any) {
@@ -100,7 +100,7 @@ export default function AdminDashboardPage() {
     e.preventDefault();
     setIsSubmitting(true);
     try {
-      await api.post('api/Admin/CreateSpecialty', specForm);
+      await api.post('/api/Admin/CreateSpecialty', specForm);
       showMessage('success', 'Especialidad creada exitosamente.');
       setSpecForm({ name: '' });
       // Recargar especialidades para el formulario de doctores
@@ -118,7 +118,7 @@ export default function AdminDashboardPage() {
     e.preventDefault();
     setIsSubmitting(true);
     try {
-      await api.post('api/Admin/CreateUser', userForm);
+      await api.post('/api/Admin/CreateUser', userForm);
       showMessage('success', `Usuario (${userForm.role}) creado exitosamente.`);
       setUserForm({ email: '', password: '', role: 'Admin' });
     } catch (err: any) {
